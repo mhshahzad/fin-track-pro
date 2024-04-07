@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# Earnings and Savings Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple web application that provides an overview of your monthly earnings, savings, and forecasting. The app features a user-friendly interface displaying key financial information and allows users to input and visualize their data.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Earning Overview
+- **Monthly Date Selection**: Navigate through different months to view and manage your financial data.
+- **Total Hours Worked**: Display the total number of hours worked in the selected month.
+- **Average Hourly Rate**: Show the average hourly rate based on the provided data.
+- **Total Earnings**: Present the total earnings for the selected month.
 
-### `npm start`
+### Savings Overview
+- **Update Savings Balance**: Allow users to update their current savings balance.
+- **Savings Goal Progress**: Display the progress towards the savings goal as a percentage.
+- **Estimated Month to Goal**: Provide an estimated month when the savings goal will be achieved.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Forecasting
+- **Calculate Future Earnings**: Project future earnings by entering the expected hours worked and hourly rate for each upcoming month.
+- **Visualize Forecasted Earnings**: Display a graph showing the forecasted earnings for the upcoming months.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Earnings Breakdown
+- **Monthly Earnings Table**: Present a table summarizing earnings for each month, including hours worked, hourly rate, and total earnings.
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/react-earnings-dashboard.git
+    ```
 
-### `npm run build`
+2. Install dependencies:
+    ```bash
+    cd react-earnings-dashboard
+    npm install
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Run the application:
+    ```bash
+    npm start
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Open your browser and visit `http://localhost:3000` to view the app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
 
-### `npm run eject`
+1. Navigate to the "Earning Overview" section to view and update your monthly earnings.
+2. Go to the "Savings Overview" section to manage your savings information.
+3. Explore the "Forecasting" section to calculate and visualize future earnings.
+4. Review the "Earnings Breakdown" table for a detailed monthly overview.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contributing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Feel free to contribute to the project by submitting pull requests or reporting issues. Your feedback and contributions are highly appreciated.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

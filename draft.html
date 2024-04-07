@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freelancer Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+      body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f4;
+      }
+
+      header {
+          background-color: #333;
+          color: #fff;
+          padding: 15px;
+          text-align: center;
+      }
+
+      section {
+          padding: 20px;
+          background-color: #fff;
+          margin: 10px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+          font-size: 24px;
+          margin-bottom: 15px;
+          color: #333;
+      }
+
+      .overview-item {
+          margin-bottom: 10px;
+          font-size: 18px;
+      }
+
+      .earnings-chart, .forecasting-chart, .savings-chart {
+          height: 300px;
+          border: 1px solid #ddd;
+          margin-top: 20px;
+          /* Add styling for the earnings and forecasting charts */
+      }
+
+      .earnings-table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+      }
+
+      .earnings-table th, .earnings-table td {
+          padding: 15px;
+          border-bottom: 1px solid #ddd;
+          text-align: left;
+      }
+
+      .savings-item {
+          margin-bottom: 10px;
+          font-size: 18px;
+      }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Freelancer Dashboard</h1>
+</header>
+
+<section>
+  <h2>Earning Overview</h2>
+  <label for="dateSelectionType">Select Date Range Type:</label>
+  <select id="dateSelectionType" onchange="toggleDateInputs()">
+    <option value="monthly">Monthly Date</option>
+    <option value="weekly">Weekly Date Range</option>
+  </select>
+
+  <div id="monthlyDateInputs">
+    <label for="monthlyDate">Select Monthly Date:</label>
+    <input type="month" id="monthlyDate" onchange="updateEarningOverview()">
+  </div>
+
+  <div id="weeklyDateInputs" style="display: none;">
+    <label for="weeklyStartDate">Select Start Date:</label>
+    <input type="date" id="weeklyStartDate" onchange="updateEarningOverview()">
+
+    <label for="weeklyEndDate">Select End Date:</label>
+    <input type="date" id="weeklyEndDate" onchange="updateEarningOverview()">
+  </div>
+  
+  <div class="overview-item">Total Hours Worked: 80</div>
+  <div class="overview-item">Average Hourly Rate: $25</div>
+  <div class="overview-item">Total Earnings: $2000</div>
+</section>
+
+<section>
+  <h2>Earnings Chart</h2>
+  <div class="earnings-chart">
+    <!-- Placeholder for earnings chart -->
+  </div>
+</section>
+
+<section>
+  <h2>Earnings Breakdown</h2>
+  <table class="earnings-table">
+    <thead>
+    <tr>
+      <th>Project/Client</th>
+      <th>Hours Worked</th>
+      <th>Rate</th>
+      <th>Earnings</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Placeholder for earnings table rows -->
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Forecasting</h2>
+  <label for="currentSavings">Current Savings:</label>
+  <input type="number" id="currentSavings" placeholder="Enter current savings">
+
+  <label for="monthlyIncome">Monthly Income:</label>
+  <input type="number" id="monthlyIncome" placeholder="Enter monthly income">
+
+  <label for="monthlyExpense">Monthly Expense:</label>
+  <input type="number" id="monthlyExpense" placeholder="Enter monthly expense">
+
+  <label for="targetSavings">Target Savings:</label>
+  <input type="number" id="targetSavings" placeholder="Enter target savings">
+
+  <button onclick="calculateSavingsOverTime()">Calculate</button>
+
+  <div class="forecasting-chart">
+    <!-- Placeholder for forecasting chart -->
+  </div>
+</section>
+
+<section>
+  <h2>Savings Overview</h2>
+  <label for="currentSavings">Enter Current Savings:</label>
+  <label for="currentSavingsInput"></label><input type="number" id="currentSavingsInput" placeholder="Enter current savings">
+
+  <label for="monthlyExpense">Enter Monthly Expense:</label>
+  <label for="monthlyExpenseInput"></label><input type="number" id="monthlyExpenseInput" placeholder="Enter monthly expense">
+  <label for="monthlyExpense">for month December</label>
+  
+
+  <button onclick="updateSavingsOverview()">Update</button>
+  <div class="loading" id="loadingIndicator" style="display: none;">Updating...</div>
+
+  <div id="savings-block">
+  <div class="savings-item" id="currentSavingsBalance">Current Savings Balance: $500</div>
+  <div class="savings-item" id="savingsGoalProgress">Savings Goal Progress: 50%</div>
+  </div>
+    
+  <div class="savings-chart">
+    <!-- Placeholder for earnings chart -->
+  </div>
+</section>
+
+<!-- Additional sections and content go here -->
+
+</body>
+</html>
+<script>
+  function toggleDateInputs() {
+    const dateSelectionType = document.getElementById("dateSelectionType").value;
+    const monthlyDateInputs = document.getElementById("monthlyDateInputs");
+    const weeklyDateInputs = document.getElementById("weeklyDateInputs");
+
+    if (dateSelectionType === "monthly") {
+      monthlyDateInputs.style.display = "block";
+      weeklyDateInputs.style.display = "none";
+    } else {
+      monthlyDateInputs.style.display = "none";
+      weeklyDateInputs.style.display = "block";
+    }
+
+    // Update the earnings overview based on the new selection
+    updateEarningOverview();
+  }
+  function updateSavingsOverview() {
+    // Display loading indicator
+    document.getElementById("loadingIndicator").style.display = "block";
+  }
+</script>
