@@ -1,10 +1,15 @@
+"use client"
+
+
 import * as React from 'react';
-import {Box, Card, Chip, Dropdown, IconButton, Menu, MenuButton, MenuItem, Sheet} from '@mui/joy';
+import {Box, Button, Card, Chip, Dropdown, IconButton, Menu, MenuButton, MenuItem, Sheet} from '@mui/joy';
 import Typography from '@mui/joy/Typography';
 import Avatar from '@mui/joy/Avatar';
-import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
+import {TrackChanges} from "@mui/icons-material";
+import {useRouter} from "next/navigation";
 
 export default function HeaderSection() {
+    const router = useRouter()
     return (
         <Box
             sx={{
@@ -31,11 +36,12 @@ export default function HeaderSection() {
                 }}
             >
                 <IconButton size="sm" variant="soft">
-                    <MapsHomeWorkIcon />
+                    <TrackChanges />
                 </IconButton>
                 <Typography component="h1" fontWeight="xl">
-                    Service
+                    Fin Track Pro 
                 </Typography>
+                <Button onClick={()=> router.push('/invoice')} variant={'soft'}>Create Invoice</Button>
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'row', gap: 3 }}>
                 <Box
